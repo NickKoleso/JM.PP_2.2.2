@@ -12,4 +12,6 @@ public interface CarDao {
     List<Car> getAll();
 
     Car getById(int id);
+
+    List<Car> getCars(Integer count);
 }

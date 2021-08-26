@@ -28,7 +28,7 @@
     <th>Model:</th>
     <th>Country of car production:</th>
   </tr>
-  <tr th:each="car : ${carsList}">
+  <tr th:each="car : ${carList}">
     <td th:text="${car.yearOfCarProd}"></td>
     <td th:text="${car.model}"></td>
     <td th:text="${car.countryOfCarProd}"></td>
