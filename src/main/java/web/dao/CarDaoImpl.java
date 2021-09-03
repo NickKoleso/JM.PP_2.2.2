@@ -1,11 +1,12 @@
 package web.dao;
 
+import org.springframework.stereotype.Component;
 import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Component
 public class CarDaoImpl implements CarDao {
     private List<Car> cars = new ArrayList<>();
 
@@ -15,26 +16,6 @@ public class CarDaoImpl implements CarDao {
         cars.add(new Car(1964, "Porsche 911", "Germany"));
         cars.add(new Car(2007, "Audi R8", "Germany"));
         cars.add(new Car(2008, "Volkswagen Golf VI", "Germany"));
-    }
-
-    @Override
-    public void save(Car car) {
-        cars.add(car);
-    }
-
-    @Override
-    public void delete(Car car) {
-        cars.remove(car);
-    }
-
-    @Override
-    public List<Car> getAll() {
-        return cars;
-    }
-
-    @Override
-    public Car getById(int id) {
-        return cars.get(id);
     }
 
     @Override
