@@ -7,22 +7,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
-import web.dao.CarDao;
+
+import web.service.CarService;
 
 
 @Controller
 public class CarsController {
 
-    private final CarDao carDao;
+    private final CarService carService;
     @Autowired
-    public CarsController(CarDao carDao) {
-        this.carDao = carDao;
+    public CarsController(CarService carService) {
+        this.carService = carService;
     }
 
 
     @GetMapping("/cars")
     public String getCarsPageByCount(ModelMap model, @RequestParam(value = "count", required = false) Integer count) {
-        model.addAttribute("carList", carDao.getCars(count));
+        model.addAttribute("carList", carService.getCars(count));
         return "cars";
     }
 }
